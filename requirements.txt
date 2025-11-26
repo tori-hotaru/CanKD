@@ -1,0 +1,101 @@
+addict==2.4.0
+aliyun-python-sdk-core==2.15.2
+aliyun-python-sdk-kms==2.16.5
+appdirs==1.4.4
+Brotli @ file:///croot/brotli-split_1714483155106/work
+certifi @ file:///croot/certifi_1725551672989/work/certifi
+cffi==1.17.1
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+cityscapesScripts==2.2.4
+click==8.1.7
+cmake==3.30.4
+colorama==0.4.6
+coloredlogs==15.0.1
+contourpy==1.1.1
+crcmod==1.7
+cryptography==43.0.1
+cycler==0.12.1
+filelock==3.14.0
+fonttools==4.54.1
+ftfy==6.2.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455532332/work
+humanfriendly==10.0
+idna @ file:///croot/idna_1714398848350/work
+imagecorruptions==1.1.2
+imageio==2.35.1
+importlib_metadata==8.5.0
+importlib_resources==6.4.5
+Jinja2 @ file:///croot/jinja2_1716993405101/work
+jmespath==0.10.0
+joblib==1.4.2
+kiwisolver==1.4.7
+lazy_loader==0.4
+lit==18.1.8
+Markdown==3.7
+markdown-it-py==3.0.0
+MarkupSafe @ file:///croot/markupsafe_1704205993651/work
+matplotlib==3.7.5
+mdurl==0.1.2
+mkl-fft @ file:///croot/mkl_fft_1695058164594/work
+mkl-random @ file:///croot/mkl_random_1695059800811/work
+mkl-service==2.4.0
+mmcls==1.0.0rc6
+mmcv==2.0.0
+mmdet==3.1.0
+mmengine==0.10.5
+-e git+https://github.com/open-mmlab/mmrazor.git@90c7af1fdf35a606a2fceaaeb4b6be2f0dac4eb7#egg=mmrazor
+mmsegmentation==1.2.2
+model-index==0.1.11
+modelindex==0.0.2
+mpmath @ file:///croot/mpmath_1690848262763/work
+networkx @ file:///croot/networkx_1690561992265/work
+numpy @ file:///work/mkl/numpy_and_numpy_base_1682953417311/work
+opencv-python==4.10.0.84
+opendatalab==0.0.10
+openmim==0.3.9
+openxlab==0.1.2
+ordered-set==4.1.0
+oss2==2.17.0
+packaging==24.1
+pandas==2.0.3
+pillow @ file:///croot/pillow_1721059439630/work
+platformdirs==4.3.6
+prettytable==3.11.0
+pycocotools==2.0.7
+pycparser==2.22
+pycryptodome==3.21.0
+Pygments==2.18.0
+pyparsing==3.1.4
+pyquaternion==0.9.9
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
+python-dateutil==2.9.0.post0
+pytorch-wavelets @ file:///home/shizhe/pytorch_wavelets
+pytz==2023.4
+PyWavelets==1.4.1
+PyYAML==6.0.2
+regex==2024.11.6
+requests==2.28.2
+rich==13.4.2
+scikit-image==0.19.3
+scipy==1.10.1
+shapely==2.0.6
+six==1.16.0
+sympy @ file:///croot/sympy_1724938189289/work
+tabulate==0.9.0
+termcolor==2.4.0
+terminaltables==3.1.10
+thop==0.1.1.post2209072238
+tifffile==2023.7.10
+tomli==2.0.2
+torch==2.0.1
+torchaudio==2.0.2
+torchvision==0.15.2
+tqdm==4.65.2
+triton==2.0.0
+typing==3.7.4.3
+typing_extensions @ file:///croot/typing_extensions_1715268824938/work
+tzdata==2024.2
+urllib3==1.26.20
+wcwidth==0.2.13
+yapf==0.40.2
+zipp==3.20.2
