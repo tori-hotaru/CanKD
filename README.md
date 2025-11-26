@@ -6,8 +6,8 @@ By Shizhe Sun(TDU), Wataru Ohyama(TDU)
 All achieved with a **single** distillation loss function.
 
 <p align="center">
-  <img src="./img/detectionCANKD.jpg" alt="img1" width="500">
-  <img src="./img/modelar.png" alt="img1" width="500">
+  <img src="./img/detectionCANKD.jpg" alt="img1" width="400">
+  <img src="./img/modelar.png" alt="img1" width="400">
 </p>
 
 ### Experiment results
