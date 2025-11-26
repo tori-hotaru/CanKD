@@ -147,7 +147,6 @@ class NonLocalAttention(nn.Module):
         y_s_ = y_s_.view(batch_size, self.inter_channels, *y_s.size()[2:])
         W_y_s = self.W(y_s_)
         
-        # # 添加分析代码
         # W_norm = torch.norm(W_y_s)
         # y_norm = torch.norm(y_s)
         # print(f"W_y_s norm: {W_norm.item():.4f}")
@@ -179,16 +178,14 @@ class NLKD_IN_Loss(nn.Module):
         self.loss_weight = loss_weight
         self.non_local_att = NonLocalAttention(self.in_channels, self.inter_channels, dimension, sub_sample, bn_layer)
         
-        # 添加Instance Normalization层
         self.in_norm = nn.InstanceNorm2d(in_channels, affine=False)
-        # # 初始化IN参数
+                     
         # if self.in_norm.weight is not None:
         #     nn.init.constant_(self.in_norm.weight, 1.0)
         # if self.in_norm.bias is not None:
         #     nn.init.constant_(self.in_norm.bias, 0.0)
     
     def norm(self, feat: torch.Tensor) -> torch.Tensor:
-        # 使用IN进行标准化
         return self.in_norm(feat)
     
     def forward(self, s_feature, t_feature):
@@ -207,14 +204,12 @@ if __name__ == '__main__':
 
     nlkd_loss = NLKD_IN_Loss(in_channels=256, dimension=2)
     
-    # 修改W的初始化权重，不再使用0
     if isinstance(nlkd_loss.non_local_att.W, nn.Sequential):
         nn.init.normal_(nlkd_loss.non_local_att.W[0].weight, mean=0.0, std=0.017)
         nn.init.normal_(nlkd_loss.non_local_att.W[1].weight, mean=0.0, std=0.4)
     else:
         nn.init.normal_(nlkd_loss.non_local_att.W.weight, mean=0.0, std=0.01)
     
-    # 计算两种方式的loss
     loss1 = nlkd_loss(y_s, y_t)
     print("Loss with non-local attention:", loss1.item())
     
