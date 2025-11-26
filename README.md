@@ -82,6 +82,7 @@ You can read [mmrazor/README.md](mmrazor/README.md) to understand how to trainin
 cd CanKD
 bash ./tools/dist_train.sh ${path/to/your/config} ${GPUS}
 ```
+In paper we set GPUS=2
 ⚠️⚠️**If you use more GPUs or less GPUs for training, please following the  [linear scaling rule](https://mmdetection.readthedocs.io/en/latest/user_guides/train.html#train-with-customized-datasets) in mmdetection README file.**
 #### For segmentation task
 For semantic segmentation, please see [configs/distill/mmseg/nlkd](configs/distill/mmseg/nlkd) folder to choose your training config files
