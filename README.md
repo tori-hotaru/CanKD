@@ -88,16 +88,25 @@ In paper we set GPUS=2
 #### For segmentation task
 For semantic segmentation, please see [configs/distill/mmseg/nlkd](configs/distill/mmseg/nlkd) folder to choose your training config files
 
-🔥**If you want to focusing our training loss file, please see [mmrazor/models/losses/nlkd_IN_loss.py](mmrazor/models/losses/nlkd_IN_loss.py)** 
+🔥**If you want to focuse our training loss file, please see [mmrazor/models/losses/nlkd_IN_loss.py](mmrazor/models/losses/nlkd_IN_loss.py)** 
 
 Careful, because we use MSE loss with 
-loss = F.mse_loss(n_z_s, n_z_t) /2
 ```code
 loss = F.mse_loss(n_z_s, n_z_t) /2
 ```
 Our weight will be dividing 2.(If you set loss_weight=10, it actually means your training weight is 5.)
 
-### License  
+#### Possibly issue & Additional tool
+If you can not training **reppoints** network. Please focusing on [#10440](https://github.com/open-mmlab/mmdetection/pull/10440).
+
+In our code, we have already repaired the [feature_diff_visualization.py](tools/visualizations/feature_diff_visualization.py) bug through [#624](https://github.com/open-mmlab/mmrazor/issues/624). After setting [vis_config/fpn_feature_visualization.py](tools/visualizations/vis_configs/fpn_feature_visualization.py) recoder name. (You can read the [#654](https://github.com/open-mmlab/mmrazor/issues/654) or use [architecture_find.py] to define architecture name.) You can follow the [docs/zh_cn/user_guides/visualization.md](docs/zh_cn/user_guides/visualization.md) to visualize your heatmap.
+
+We also provide [confusion_matrix.py](mmdetection_test/confusion_matrix.py) and [test_robustness.py](mmdetection_test/test_robustness.py) to help you create confusion matrix and test robustness. You can read [confusion_matrix](https://mmdetection.readthedocs.io/en/latest/user_guides/useful_tools.html#confusion-matrix) and [robustness_benchmarking](https://mmdetection.readthedocs.io/en/latest/user_guides/robustness_benchmarking.html) to get more detail. **Note: You need to convert your distillation .pth by using [convert_kd_ckpt_to_student.py](tools/model_converters/convert_kd_ckpt_to_student.py) first**
+
+#### Acknowledgement
+This repository is build upon the [MGD](https://github.com/yzd-v/MGD), [PKD](https://github.com/open-mmlab/mmrazor), [mmrazor](https://github.com/open-mmlab/mmrazor) repository.
+
+#### License  
 
 This project is released under the [Apache 2.0 license](LICENSE).
 
