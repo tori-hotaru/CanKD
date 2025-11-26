@@ -1,6 +1,102 @@
-# CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation
+# CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation (WACV26)
 ⭐Official implementation of paper "CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation" (WACV 2026)
 By Shizhe Sun(TDU), Wataru Ohyama(TDU)
 
-⭐CanKD reaches the **SOTA** performance in multiple teacher-student architectures for dense prediction tasks.
+🥇CanKD reaches the **Excellent** performance in multiple teacher-student architectures for dense prediction tasks, segmentation tasks, advanced models(**Including Dino, Grounding-Dino**) and large-scale datasets(**Object365v2 dataset**).
+All achieved with a **single** distillation loss function.
+
+<p align="center">
+  <img src="./img/detectionCANKD.jpg" alt="img1" width="500">
+  <img src="./img/modelar.png" alt="img1" width="500">
+</p>
+
+### Experiment results
+* Baseline settings:  (all weights is equal 5.)
+
+  |        Student         |         Teacher         |  CanKD   |  CanKD $\dagger$  | 
+  | :--------------------: | :---------------------: | :------: | :------: |
+  | Faster RCNN-R50 (38.4) | Faster RCNN-R101 (39.8) |   40.1   |   40.7   |
+  |  RetinaNet-R50 (37.4)  |  RetinaNet-R101 (38.9)  |   39.7   |   39.8   |
+  |    FCOS-R50 (38.5)     |    FCOS-R101 (40.8)     |   42.4   |   42.4   |
+
+* Stronger teachers:(all weights is equal 5.)
+
+  |        Student         |            Teacher            |   CanKD | CanKD $\dagger$  |
+  | :--------------------: | :---------------------------: | :------: | :------: |
+  | Faster RCNN-R50 (38.4) | Cascade Mask RCNN-X101 (45.6) |   42.0   | 42.5 |
+  |  RetinaNet-R50 (37.4)  |     RetinaNet-X101 (41.0)     |   41.0   | 41.1 |
+  |  RepPoints-R50 (38.6)  |     RepPoints-R101 (44.2)     |   42.4   | 42.6 |
+
+* Heterogeneous teacher(all weights is equal 5.)
+  
+  |        Student         |         Teacher         |  CanKD   |
+  | :--------------------: | :---------------------: | :------: |
+  | RetinaNet-R50 (37.4)   | FCOS-X101 (42.7)        |   40.5   |
+  
+😊**Note: You can find all training config file in [Link](configs/distill/mmdet/nlkd) for dense prediction tasks.**
+  
+* Semantic segmentation(mIoU) (Here we use weight=10 when PSPNet-R101 as teacher and DeepLabV3-R18 as student following the ablation experiment and others are all 5)
+
+  |        Student         |         Teacher         |  CanKD   |    Config    |                    
+  | :--------------------: | :---------------------: | :------: |:------: |
+  | PSPNet-R18 (74.87)     | PSPNet-R101 (79.74)     |   76.24  |[config](configs/distill/mmseg/nlkd/nlkdIN_feature_pspnet_r101-d8_pspnet_r18-d8_4xb2-80k_cityscapes-512x1024.py)|
+  | DeepLabV3-R18 (76.70)   | PSPNet-R101 (79.74)    |   77.34  |[config](configs/distill/mmseg/nlkd/nlkdIN_feature_w10_pspnet_r101-d8-deeplabv3_r18-d8_80k_cityscapes-512x1024.py)|
+  | DeepLabV3-R18 (76.70)   | DeepLabV3-R101 (80.31) |   77.12  |[config](configs/distill/mmseg/nlkd/nlkdIN_feature_deeplabv3_r101-d8_deeplabv3_r18-d8_80k_cityscapes-512x1024.py)|
+  | DeepLabV3-Mv2 (73.84)   | DeepLabV3-R101 (80.31) |   75.62  |[config](configs/distill/mmseg/nlkd/nlkdIN_feature_deeplabv3_r101-d8_deeplabv3_mv2-d8_80k_cityscapes-512x1024.py)|
+* Advanced model and Large-scale dataset. (all weights is equal 5.)
+ 
+  |        Student         |         Teacher         |  CanKD   |  config  | log|
+  | :--------------------: | :---------------------: | :------: | :------: |:------: |
+  | Dino-R50 (49.0)        | Dino-R101 (50.4)        |   49.7 |  [config](configs/distill/mmdet/nlkd/nlkd_dino-r101_dino-r50_12e_coco.py)  |[log](logfile/dino.log)|
+  |  GroundingDino-R50 (48.9)  |  GroundingDino-R101 (50.0)  |   49.8   |   [config](configs/distill/mmdet/nlkd/nlkd_ggdino-r101_ggdino-r50_1x_coco.py)  |[log](logfile/groundingdino.log)|
+  |    RetinaNet-R50(Object365v2) (16.7)     |     RetinaNet-R101(Object365v2) (19.5)     |   18.4   |  [config](configs/distill/mmdet/nlkd/nlkdD_fpn_retinanet-r101_retinanet-r50_1x_objects365v2.py)  |[log](logfile/object365.log)|
+
+### Installation
+Our code is based on the Openmmlab mmrazor platform. [Link](https://github.com/open-mmlab/mmrazor).
+
+⚠️⚠️⚠️⚠️**Attention**: Because the mmrazor installation guide has mistakes, so here **DO NOT INSTALL mmcv=2.2.0 !!**. **And mmcv=2.1.0 is not suitable for mmcls, so we do not recommend.**
+Our enviroment:
+* Python=3.8.18
+* Torch=2.0.1
+* CUDA=11.7
+* mmcv=2.0.0, mmengine=0.10.5, mmdet=3.1.0, mmsegmentation=1.2.2, mmrazor=1.0.0, mmcls=1.0.0rc6
+
+We recommend install mmcv by
+```shell
+pip install mmcv==2.0.0 -f https://download.openmmlab.com/mmcv/dist/cu117/torch2.0/index.html
+```
+
+⚠️**Attention**: mmdet=3.1.0 did not included Dino and Grounding-Dino. If you want to train on these models, please upgrade mmdet.
+
+You can read [mmrazor/README.md](mmrazor/README.md) to finish your remaining installation. After installing **openmim**, you can install other Openmmlab library like mmdet by using
+
+```shell
+mim install mmdet=3.1.0
+```
+
+### Training
+You can read [mmrazor/README.md](mmrazor/README.md) to understand how to training distillation model.
+#### Training student
+```shell
+cd CanKD
+bash ./tools/dist_train.sh ${path/to/your/config} ${GPUS}
+```
+#### 
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
 
