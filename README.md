@@ -7,7 +7,8 @@ All achieved with a **single** distillation loss function.
 
 <p align="center">
   <img src="./img/detectionCANKD.jpg" alt="img1" width="400">
-  <img src="./img/modelar.png" alt="img1" width="400">
+  <img src="./img/modelar.png" alt="img2" width="400">
+  <img src="./img/ex in seg large.png" alt="img3" width="500">
 </p>
 
 ### Experiment results
