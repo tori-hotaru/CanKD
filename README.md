@@ -81,7 +81,23 @@ You can read [mmrazor/README.md](mmrazor/README.md) to understand how to trainin
 cd CanKD
 bash ./tools/dist_train.sh ${path/to/your/config} ${GPUS}
 ```
-#### 
+⚠️⚠️**If you use more GPUs or less GPUs for training, please following the  [linear scaling rule](https://mmdetection.readthedocs.io/en/latest/user_guides/train.html#train-with-customized-datasets) in mmdetection README file.**
+#### For segmentation task
+For semantic segmentation, please see [configs/distill/mmseg/nlkd](configs/distill/mmseg/nlkd) folder to choose your training config files
+
+🔥**If you want to focusing our training loss file, please see [mmrazor/models/losses/nlkd_IN_loss.py](mmrazor/models/losses
+/nlkd_IN_loss.py)** 
+
+Careful, because we use MSE loss with 
+loss = F.mse_loss(n_z_s, n_z_t) /2
+```code
+loss = F.mse_loss(n_z_s, n_z_t) /2
+```
+Our weight will be dividing 2.(If you set loss_weight=10, it actually means your training weight is 5.)
+
+### License  
+
+This project is released under the [Apache 2.0 license](LICENSE).
 
 
 
