@@ -1,4 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+# Copyright (c) OpenMMLab. All rights reserved.
 from .ab_loss import ABLoss
 from .at_loss import ATLoss
 from .crd_loss import CRDLoss
@@ -43,12 +44,5 @@ __all__ = [
     'NLKD_IN_Gaussian_Loss',
     'NLKD_IN_EBGaussian_Loss',
     'NLKD_woIN_Loss',
-    'NLKD_IN_4x4_Loss',
-    'NLKD_IN_8x8_Loss',
-    'MHCan_Loss',
-    'DirectionLoss',
-    'WeightLoss',
-    'FeatureLoss',
-    'NLKD_IN_1d_Loss',
     'LayerNorm_loss',
 ]
