@@ -19,16 +19,6 @@ from .pkd_loss import PKDLoss
 from .relational_kd import AngleWiseRKD, DistanceWiseRKD
 from .weighted_soft_label_distillation import WSLD
 
-from .ct_loss import ContourletTransKD
-from .shiftwindow_loss import ShiftWindowLoss
-from .shiftwindowmask_loss import ShiftWindowRevLoss
-from .fusion_loss import FusionLoss
-from .wavelet_att_loss import WaveletAttLoss
-from .wavelet_att_loss import WaveletAtt_L2_Loss
-from .att_loss import Att_L2_Loss
-from .attpro_loss import AttPro_L2_Loss
-from .attprov2_loss import AttProv2_L2_Loss
-from .attprov3_loss import AttProv3_L2_Loss, AttProv3_PCC_Loss
 from .nlkd_loss import NLKD_Loss
 from .smooth_l1_loss import SmoothL1Loss
 from .nlkd_woskip_loss import NLKD_WOSkip_Loss
@@ -39,11 +29,6 @@ from .nlkd_IN_gaussain_loss import NLKD_IN_Gaussian_Loss
 from .nlkd_IN_EBgaussain_loss import NLKD_IN_EBGaussian_Loss
 from .nlkd_woIN_loss import NLKD_woIN_Loss
 from .IN_only_loss import IN_only_loss
-from .nlkd_IN_4x4_loss import NLKD_IN_4x4_Loss
-from .nlkd_IN_8x8_loss import NLKD_IN_8x8_Loss
-from .mhcan_loss import MHCan_Loss
-from .dw_loss import DirectionLoss, WeightLoss, FeatureLoss
-from .nlkd_IN_1d_loss import NLKD_IN_1d_Loss
 from .layer_norm_loss import LayerNorm_loss
 
 __all__ = [
