@@ -88,8 +88,7 @@ In paper we set GPUS=2
 #### For segmentation task
 For semantic segmentation, please see [configs/distill/mmseg/nlkd](configs/distill/mmseg/nlkd) folder to choose your training config files
 
-🔥**If you want to focusing our training loss file, please see [mmrazor/models/losses/nlkd_IN_loss.py](mmrazor/models/losses
-/nlkd_IN_loss.py)** 
+🔥**If you want to focusing our training loss file, please see [mmrazor/models/losses/nlkd_IN_loss.py](mmrazor/models/losses/nlkd_IN_loss.py)** 
 
 Careful, because we use MSE loss with 
 loss = F.mse_loss(n_z_s, n_z_t) /2
