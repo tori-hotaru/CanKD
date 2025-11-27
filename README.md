@@ -117,7 +117,8 @@ This repository is build upon the [MGD](https://github.com/yzd-v/MGD), [PKD](htt
 
 This project is released under the [Apache 2.0 license](LICENSE).
 
-### If you use CanKD for your research, please cite our work by using the following BibTeX entry:
+### Citation
+If you use CanKD for your research, please cite our work by using the following BibTeX entry:
 ```
 @misc{sun2025cankdcrossattentionbasednonlocaloperation,
       title={CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation}, 
