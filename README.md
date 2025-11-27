@@ -1,4 +1,11 @@
 # CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation (WACV26)
+
+<p>
+  <a href="https://arxiv.org/abs/2511.21503" target='_blank'>
+    <img src="http://img.shields.io/badge/arXiv-2511.21503-b31b1b?logo=arxiv&logoColor=b31b1b" alt="ArXiv">
+  </a>
+</p>
+
 ⭐Official implementation of paper "CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation" (WACV 2026)
 
 By Shizhe Sun(TDU), Wataru Ohyama(TDU)
@@ -110,6 +117,18 @@ This repository is build upon the [MGD](https://github.com/yzd-v/MGD), [PKD](htt
 
 This project is released under the [Apache 2.0 license](LICENSE).
 
+### If you use CanKD for your research, please cite our work by using the following BibTeX entry:
+```
+@misc{sun2025cankdcrossattentionbasednonlocaloperation,
+      title={CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation}, 
+      author={Shizhe Sun and Wataru Ohyama},
+      year={2025},
+      eprint={2511.21503},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.21503}, 
+}
+```
 
 
 
