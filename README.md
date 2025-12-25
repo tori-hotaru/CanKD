@@ -1,4 +1,4 @@
-# CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation (WACV26)
+# CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation (WACV2026)
 
 <p>
   <a href="https://arxiv.org/abs/2511.21503" target='_blank'>
@@ -10,7 +10,7 @@
 
 By Shizhe Sun(TDU), Wataru Ohyama(TDU)
 
-🥇CanKD reaches the **Excellent** performance in multiple teacher-student architectures for dense prediction tasks, segmentation tasks, advanced models(**Including Dino, Grounding-Dino**) and large-scale datasets(**Object365v2 dataset**).
+🥇CanKD reaches the **SOTA** performance in multiple teacher-student architectures for dense prediction tasks, segmentation tasks, advanced models(**Including Dino, Grounding-Dino**) and large-scale datasets(**Object365v2 dataset**).
 All achieved with a **single** distillation loss function.
 
 <p align="center">
