@@ -14,7 +14,7 @@ By Shizhe Sun(TDU), Wataru Ohyama(TDU)
 All achieved with a **single** distillation loss function.
 
 <p align="center">
-  <img src="./img/CanKD_poster.png" alt="img1" width="800">
+  <img src="./img/CanKD_poster.png" alt="img1" width="1400">
 </p>
 
 ### Experiment results
