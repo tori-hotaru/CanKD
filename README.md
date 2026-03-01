@@ -118,11 +118,12 @@ This project is released under the [Apache 2.0 license](LICENSE).
 ### Citation
 If you use CanKD for your research, please cite our work by using the following BibTeX entry:
 ```
-@article{sun2025cankd,
+@inproceedings{sun2026cankd,
   title={CanKD: Cross-Attention-based Non-local operation for Feature-based Knowledge Distillation},
   author={Sun, Shizhe and Ohyama, Wataru},
-  journal={arXiv preprint arXiv:2511.21503},
-  year={2025}
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={8606--8616},
+  year={2026}
 }
 ```
 
